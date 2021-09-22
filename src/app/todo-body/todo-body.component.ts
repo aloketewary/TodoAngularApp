@@ -53,6 +53,14 @@ export class TodoBodyComponent implements OnInit {
   }
 
   someComplete() {
-      return this.todoList.every(t => t.isChecked)
+      let allChecked = this.todoList.every(t => t.isChecked)
+      let someChecked = this.todoList.some(t => t.isChecked)
+      if (allChecked) {
+        return false;
+      } else return someChecked
+  }
+
+  allChecked() {
+    return this.todoList.every(t => t.isChecked)
   }
 }

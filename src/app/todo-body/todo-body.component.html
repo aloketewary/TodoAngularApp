@@ -1,5 +1,5 @@
 <mat-card class="todo-card">
-  <mat-checkbox class="example-margin" [indeterminate]="someComplete()" (change)="checkAllOrNone($event.checked)">Check All/None</mat-checkbox>
+  <mat-checkbox class="example-margin" [checked]="allChecked()" [indeterminate]="someComplete()" (change)="checkAllOrNone($event.checked)">Check All/None</mat-checkbox>
   <ng-container *ngIf="todoList.length > 0; then thenTemplate; else elseTemplate"></ng-container>
   <ng-template #thenTemplate>
     <mat-nav-list>
